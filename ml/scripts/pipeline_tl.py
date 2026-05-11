@@ -7,7 +7,7 @@ import tensorflow as tf
 from ultralytics import YOLO
 
 # === KONFIGURACJA ===
-IMAGE_PATH = '/home/rumaxx/road-signs-project/ml/others/sign32.jpg' 
+IMAGE_PATH = '/home/rumaxx/road-signs-project/ml/images/sign20.jpg' 
 OUTPUT_FILENAME = 'pipeline_result.jpg'
 
 # 1. MODEL YOLO
@@ -16,11 +16,11 @@ YOLO_MODEL_NAME = '/home/rumaxx/road-signs-project/ml/YOLO/YOLOv2-GTSDB/yolo_uni
 
 # 2. MODEL CNN
 #CNN_MODEL_PATH = '/home/rumaxx/road-signs-project/ml/trained_models/best_model_finetuned.keras'
-TL_MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_96/efficientnet_b0_96_v1.keras'
+TL_MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_48/efficientnet_b0_48_v1.keras'
 
 
 MIN_CONFIDENCE = 0.8
-IMG_SIZE = 96
+IMG_SIZE = 48
 
 # SŁOWNIK KLAS 
 CLASSES = {

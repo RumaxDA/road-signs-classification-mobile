@@ -23,15 +23,15 @@ NUM_CATEGORIES = 43
 TEST_CSV_PATH = '/home/rumaxx/road-signs-project/ml/data/Test.csv'
 TEST_ROOT_DIR = '/home/rumaxx/road-signs-project/ml/data'
 # === CNN KATALOG PLOTS ===
-PLOTS_DIR = '/home/rumaxx/road-signs-project/ml/new_plots/Custom_CNN/cnn_224'
+PLOTS_DIR = '/home/rumaxx/road-signs-project/ml/new_plots/Custom_CNN/cnn_96'
 # === MOBILENETV2 KATALOG PLOTS ===
 os.makedirs(PLOTS_DIR, exist_ok=True)
 BATCH_SIZE = 32
-IMG_HEIGHT, IMG_WIDTH = 224, 224
+IMG_HEIGHT, IMG_WIDTH = 96, 96
 
 # === WYBÓR MODELU ===
-MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/CNN/cnn_224/cnn_224_v1.keras'
-HISTORY_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/CNN/cnn_224/cnn_224_history_v1.json'
+MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/CNN/cnn_96/cnn_96_v1.keras'
+HISTORY_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/CNN/cnn_96/cnn_96_history_v1.json'
 
 # === FUNKCJE POMOCNICZE (WYKRESY) ===
 def plot_history(history, name):
@@ -154,6 +154,7 @@ def plot_confidence_distribution(y_true, y_pred, y_pred_probs, name):
 
     plt.xlabel('Pewność modelu (Softmax Probability)', fontsize=12)
     plt.ylabel('Liczba próbek', fontsize=12)
+    plt.yscale('log')
     plt.title(f'{name} - Rozkład pewności siebie (Confidence Distribution)', fontsize=14)
     plt.legend(loc='upper left')
     plt.grid(axis='y', alpha=0.3)
@@ -201,7 +202,7 @@ if __name__ == "__main__":
     filename = os.path.basename(MODEL_PATH)
     print(f"=== ROZPOCZYNAM EWALUACJĘ MODELU: {filename} ===")
 
-    model_display_name = "CNN_224"
+    model_display_name = "CNN_96"
 
 
     # Wczytanie CSV

@@ -1,8 +1,8 @@
 === Ogólne Wyniki Modelu ===
 Test Loss:           0.4612
-Test Accuracy:       0.8603
-Total Infer. Time:   25.5157 s
-Time per Image:      2.020 ms
+Test Accuracy:       0.8604
+Total Infer. Time:   53.0906 s
+Time per Image:      4.204 ms
 
 === Classification Report ===
               precision    recall  f1-score   support
@@ -30,7 +30,7 @@ Time per Image:      2.020 ms
           20       0.55      0.62      0.59        90
           21       0.88      0.77      0.82        90
           22       0.98      0.73      0.84       120
-          23       0.64      0.83      0.72       150
+          23       0.64      0.84      0.73       150
           24       1.00      0.87      0.93        90
           25       0.87      0.88      0.87       480
           26       0.88      0.94      0.91       180
@@ -38,7 +38,7 @@ Time per Image:      2.020 ms
           28       0.80      0.82      0.81       150
           29       0.75      0.52      0.61        90
           30       0.90      0.75      0.81       150
-          31       0.84      0.94      0.89       270
+          31       0.85      0.94      0.89       270
           32       0.97      0.93      0.95        60
           33       0.87      0.74      0.80       210
           34       0.65      0.83      0.73       120
@@ -52,18 +52,18 @@ Time per Image:      2.020 ms
           42       0.86      0.66      0.74        90
 
     accuracy                           0.86     12630
-   macro avg       0.81      0.79      0.79     12630
+   macro avg       0.81      0.79      0.80     12630
 weighted avg       0.86      0.86      0.86     12630
 
 
 === Top-k Accuracy ===
-Top-1: 0.8603
+Top-1: 0.8604
 Top-3: 0.9648
 Top-5: 0.9857
 
 === Analiza Pewności (Confidence) ===
 Avg Confidence (Correct):   0.9109
-Avg Confidence (Incorrect): 0.6245
+Avg Confidence (Incorrect): 0.6246
 
 === Najczęściej mylone klasy ===
 True 1 → Pred 2 : 135

@@ -1,10 +1,7 @@
-import os
 import tensorflow as tf
 from keras.models import load_model
 from keras_preprocessing.image import ImageDataGenerator
-from keras import layers, models
 from keras.optimizers import Adam
-from keras.layers import GlobalAveragePooling2D
 
 
 
