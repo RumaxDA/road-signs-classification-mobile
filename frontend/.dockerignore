@@ -1,16 +1,16 @@
-# Zależności - to zainstaluje Docker wewnątrz obrazu
+
 node_modules
 .npm
 npm-debug.log*
 
-# Buildy i pliki tymczasowe
+
 dist
 build
 .svelte-kit
 .next
 .cache
 
-# Pliki systemowe i IDE
+
 .DS_Store
 .vscode
 .idea
@@ -20,17 +20,17 @@ build
 *.sln
 *.sw?
 
-# Git
+
 .git
 .gitignore
 
-# Środowisko
+
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Docker (nie potrzebujemy kopiować tych plików do środka)
+
 Dockerfile
 docker-compose.yml
