@@ -1,4 +1,4 @@
-# === ŚRODOWISKO WIRTUALNE ===
+
 ml/venv/
 backend/venv/
 venv/
@@ -6,35 +6,33 @@ venv/
 env/
 .env
 
-# === CACHE I PLIKI TYMCZASOWE PYTHONA ===
-__pycache__/
+
 *.pyc
 *.pyo
 *.pyd
 .pytest_cache/
 
-# === FOLDER ML (GŁÓWNY WINOWAJCA) ===
-# Ignorujemy całe gigabajty danych, wykresów i skryptów badawczych
+
 ml/data/
 ml/new_plots/
 ml/evaluate/
 ml/scripts/
 
-# === MODELE (Zarządzanie wagami) ===
-# Ignorujemy wszystkie modele...
+
+
 ml/new_trained_models/*
 
 
-# === IDE I KONTROLA WERSJI ===
+
 .vscode/
 .idea/
 .git/
 .gitignore
 
-# === JUPYTER NOTEBOOKS ===
+
 .ipynb_checkpoints/
 *.ipynb
 
-# === OS ===
+
 .DS_Store
 Thumbs.db
