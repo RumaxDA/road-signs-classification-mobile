@@ -1,28 +1,26 @@
-# === Środowisko lokalne ===
+
 venv/
 env/
 .venv/
 .env
 
-# === Pliki eksperymentalne ML (Bardzo ważne!) ===
-# Ignorujemy wszystko co dotyczy treningu, zostawiamy tylko to co w samym folderze backend
 ml/
 scripts/
 notebooks/
 data/
 evaluate/
 
-# === Cache Pythona ===
+
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# === Logi i bazy danych ===
+
 *.log
 postgres_data/
 
-# === IDE i systemowe ===
+
 .git/
 .gitignore
 .vscode/
