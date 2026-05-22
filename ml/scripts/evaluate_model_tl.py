@@ -23,15 +23,15 @@ NUM_CATEGORIES = 43
 TEST_CSV_PATH = '/home/rumaxx/road-signs-project/ml/data/Test.csv'
 TEST_ROOT_DIR = '/home/rumaxx/road-signs-project/ml/data'
 
-PLOTS_DIR = '/home/rumaxx/road-signs-project/ml/new_plots/EfficientNet/tl_96'
+PLOTS_DIR = '/home/rumaxx/road-signs-project/ml/new_plots/EfficientNet/tl_32'
 os.makedirs(PLOTS_DIR, exist_ok=True)
 BATCH_SIZE = 32
 
-IMG_HEIGHT, IMG_WIDTH = 96, 96
+IMG_HEIGHT, IMG_WIDTH = 32, 32
 
 # === WYBÓR MODELU ===
-MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_96/efficientnet_b0_96_v1.keras'
-HISTORY_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_96/efficientnet_b0_96_history_v1.json'
+MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_32/efficientnet_b0_32_v1.keras'
+HISTORY_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_32/efficientnet_b0_32_history_v1.json'
 
 # === FUNKCJE POMOCNICZE (WYKRESY) ===
 def plot_history(history, name):
@@ -152,7 +152,7 @@ def plot_confidence_distribution(y_true, y_pred, y_pred_probs, name):
     plt.hist(correct_conf, bins=bins, alpha=0.6, color='green', label='Poprawne predykcje')
     
     if len(incorrect_conf) > 0:
-        plt.hist(incorrect_conf, bins=bins, alpha=0.8, color='red', label='Błędne predykcje')
+        plt.hist(incorrect_conf, bins=bins, alpha=0.65, color='red', label='Błędne predykcje')
 
     plt.xlabel('Pewność modelu (Softmax Probability)', fontsize=12)
     plt.ylabel('Liczba próbek', fontsize=12)
@@ -203,7 +203,7 @@ if __name__ == "__main__":
     filename = os.path.basename(MODEL_PATH)
     print(f"=== ROZPOCZYNAM EWALUACJĘ MODELU: {filename} ===")
 
-    model_display_name = "EfficientNetB0_96"
+    model_display_name = "EfficientNetB0_32"
 
 
     # Wczytanie CSV

@@ -1,8 +1,8 @@
 === Ogólne Wyniki Modelu ===
 Test Loss:           1.0124
 Test Accuracy:       0.6660
-Total Infer. Time:   6.5023 s
-Time per Image:      0.515 ms
+Total Infer. Time:   6.7694 s
+Time per Image:      0.536 ms
 
 === Classification Report ===
               precision    recall  f1-score   support

@@ -73,6 +73,9 @@ ml/example/
 ml/zdjecia/
 ml/scripts/plots_tl.ipynb
 ml/new_plots
+ml/scripts/prepare_photos.py
+ml/training_efficientnet_96_v1.py
+
 *.jpg
 *.png
 

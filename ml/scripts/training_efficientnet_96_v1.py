@@ -13,19 +13,19 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 # === CONFIG ===
 TRAIN_CSV_PATH = "/home/rumaxx/road-signs-project/ml/data/Train.csv"
 ROOT_DIR = "/home/rumaxx/road-signs-project/ml/data"
-SAVE_DIR = "/home/rumaxx/road-signs-project/ml/new_trained_models"
+SAVE_DIR = "/home/rumaxx/road-signs-project/ml/new_trained_models/experimental"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
-IMG_HEIGHT = 96
-IMG_WIDTH = 96
+IMG_HEIGHT = 32
+IMG_WIDTH = 32
 NUM_CLASSES = 43
 BATCH_SIZE = 32
 EPOCHS = 30
 SEED = 42
 LR = 1e-3
 
-MODEL_PATH = os.path.join(SAVE_DIR, "efficientnet_b0_96_v1.keras")
-HISTORY_PATH = os.path.join(SAVE_DIR, "efficientnet_b0_96_history_v1.json")
+MODEL_PATH = os.path.join(SAVE_DIR, "efficientnet_b0_32_v2.keras")
+HISTORY_PATH = os.path.join(SAVE_DIR, "efficientnet_b0_32_history_v2.json")
 
 # === DATA LOADING ===
 def load_and_preprocess(path, x1, y1, x2, y2, label):
@@ -64,13 +64,7 @@ def build_efficientnet():
 
     inputs = Input(shape=(IMG_HEIGHT, IMG_WIDTH, 3))
 
-    # === AUGMENTACJA ===
-    x = RandomRotation(0.05)(inputs) 
-    x = RandomZoom(0.1)(x)
-    x = RandomTranslation(0.1, 0.1)(x)
-    x = RandomContrast(0.1)(x)
-
-    x = base_model(x, training=False) 
+    x = base_model(inputs, training=False)
 
     # 3. Nowa głowa klasyfikująca (Top)
     x = GlobalAveragePooling2D()(x)

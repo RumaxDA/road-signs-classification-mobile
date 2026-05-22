@@ -7,13 +7,13 @@ import tensorflow as tf
 from ultralytics import YOLO
 
 # === KONFIGURACJA ===
-IMAGE_PATH = '/home/rumaxx/road-signs-project/ml/others/sign17.jpg' 
+IMAGE_PATH = '/home/rumaxx/road-signs-project/ml/images/27.jpg' 
 OUTPUT_FILENAME = 'pipeline_result.jpg'
 
 # 1. MODEL YOLO
 #YOLO_MODEL_NAME = 'yolov8n.pt'
-YOLO_MODEL_NAME = '/home/rumaxx/road-signs-project/ml/YOLO/YOLOv2-GTSDB/yolo_universal_sign_det/weights/best.pt'
-#YOLO_MODEL_NAME = '/home/rumaxx/road-signs-project/ml/YOLO/yolo_universal_sign_det/weights/best.pt'
+#YOLO_MODEL_NAME = '/home/rumaxx/road-signs-project/ml/YOLO/YOLOv2-GTSDB/yolo_universal_sign_det/weights/best.pt'
+YOLO_MODEL_NAME = '/home/rumaxx/road-signs-project/ml/YOLO/yolo_universal_sign_det/weights/best.pt'
 
 # 2. MODEL CNN
 #CNN_MODEL_PATH = '/home/rumaxx/road-signs-project/ml/trained_models/best_model_finetuned.keras'
@@ -35,7 +35,7 @@ CLASSES = {
     18: "Inne niebezpieczeństwo", 19: "Niebezpieczny zakręt w lewo", 
     20: "Niebezpieczny zakręt w prawo", 21: "Podwójny zakręt, pierwszy w lewo", 
     22: "Nierówna droga", 23: "Śliska jezdnia", 24: "Zagrożenie zwężeniem jezdni - prawostronne", 
-    25: "Roboty drogowe", 26: "Sygnalizacja świetlna", 27: "Przejście dla pieszych", 
+    25: "Roboty drogowe", 26: "Sygnalizacja świetlna", 27: "Piesi", 
     28: "Dzieci", 29: "Rowerzyści", 30: "Oszronienie jezdni", 
     31: "Dzikie zwierzęta", 32: "Koniec zakazów", 33: "Nakaz jazdy w prawo", 
     34: "Nakaz jazdy w lewo", 35: "Nakaz jazdy prosto", 36: "Nakaz jazdy prosto lub w prawo", 
@@ -45,7 +45,7 @@ CLASSES = {
 }
 
 def preprocess_for_cnn(img):
-    img_resized = cv2.resize(img, (224, 224)) 
+    img_resized = cv2.resize(img, (48, 48)) 
     img_float = img_resized.astype("float32") / 255.0
     return np.expand_dims(img_float, axis=0)
 
