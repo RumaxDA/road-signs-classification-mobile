@@ -29,7 +29,7 @@ class TrafficSignSystem:
             18: "Inne niebezpieczeństwo", 19: "Niebezpieczny zakręt w lewo", 
             20: "Niebezpieczny zakręt w prawo", 21: "Podwójny zakręt, pierwszy w lewo", 
             22: "Nierówna droga", 23: "Śliska jezdnia", 24: "Zagrożenie zwężeniem jezdni - prawostronne", 
-            25: "Roboty drogowe", 26: "Sygnalizacja świetlna", 27: "Piesi", 
+            25: "Roboty drogowe", 26: "Sygnalizacja świetlna", 27: "Przejście dla pieszych", 
             28: "Dzieci", 29: "Rowerzyści", 30: "Oszronienie jezdni", 
             31: "Dzikie zwierzęta", 32: "Koniec zakazów", 33: "Nakaz jazdy w prawo", 
             34: "Nakaz jazdy w lewo", 35: "Nakaz jazdy prosto", 36: "Nakaz jazdy prosto lub w prawo", 
