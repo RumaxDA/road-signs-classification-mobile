@@ -70,6 +70,11 @@ ml/debug_crops/
 ml/videos/
 ml/experiments/
 ml/example/
+ml/zdjecia/
+ml/scripts/plots_tl.ipynb
+ml/new_plots
+*.jpg
+*.png
 
 
 backend/app/static/

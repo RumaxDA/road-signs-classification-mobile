@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     YOLO_MODEL_PATH: str = "models_ai/best.pt"
     CNN_MODEL_PATH: str = "models_ai/cnn_48_v1.keras"
     TL_MODEL_PATH: str = "models_ai/efficientnet_b0_224_v1.keras"
+    TL_96_MODEL_PATH: str = "models_ai/efficientnet_b0_96_v1.keras"
 
     @property
     def ASYNC_DATABASE_URL(self) -> str:
