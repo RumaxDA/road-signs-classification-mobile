@@ -51,7 +51,7 @@ cp .env.example .env
 **Step 3: Download AI Models**
 
 - Go to Releases page of this repository.
-- Download the model weights: best.pt, cnn_48_v1.keras, efficientnet_b0_224_v1.keras.
+- Download the model weights: best.pt, cnn_48_v1.keras, efficientnet_b0_224_v1.keras, efficientnet_b0_96_v1.keras.
 - Place the downloaded files directly into the models_ai/ directory in backend.
 
 **Step 4: Build and run the application**
