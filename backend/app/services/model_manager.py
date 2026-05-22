@@ -8,6 +8,7 @@ logger = logging.getLogger(__name__)
 class ModelVersion(str, Enum):
     CNN_48 = "CNN_48_v1"
     TL_224 = "TL_224_v1"
+    TL_96 = "TL_96_v1"
 
 class ModelManager:
     def __init__(self):
@@ -27,6 +28,11 @@ class ModelManager:
                     settings.YOLO_MODEL_PATH,
                     settings.TL_MODEL_PATH,
                     img_size=224
+                ),
+                "TL_96_v1" : TrafficSignSystem(
+                    settings.YOLO_MODEL_PATH,
+                    settings.TL_96_MODEL_PATH,
+                    img_size=96
                 )
             }
             logger.info(f"Załadowano modele: {list(self._models.keys())}")
