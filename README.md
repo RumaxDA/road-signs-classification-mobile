@@ -61,5 +61,5 @@ docker compose up --build
 ```
 
 **Access points:**
-Frontend UI: http://localhost:5173
-API Documentation: http://localhost:8000/docs
+Frontend UI: http://localhost:5173  
+API Documentation: http://localhost:8000/docs  
