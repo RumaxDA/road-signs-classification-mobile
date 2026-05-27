@@ -42,7 +42,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - CHOKIDAR_USEPOOLING=true
+      - CHOKIDAR_USEPOLLING=true
     depends_on:
       - backend_road_signs
 
