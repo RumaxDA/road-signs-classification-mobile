@@ -10,8 +10,8 @@ NUM_CATEGORIES = 43
 TEST_CSV_PATH = '/home/rumaxx/road-signs-project/ml/data/Test.csv'
 TEST_ROOT_DIR = '/home/rumaxx/road-signs-project/ml/data'
 
-MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/CNN/cnn_48/cnn_48_v1.keras'
-IMG_HEIGHT, IMG_WIDTH = 48, 48
+MODEL_PATH = '/home/rumaxx/road-signs-project/ml/new_trained_models/TL/tl_224/efficientnet_b0_224_v1.keras'
+IMG_HEIGHT, IMG_WIDTH = 224, 224
 BATCH_SIZE = 32
 
 # KATALOG NA WYNIKI
@@ -28,16 +28,17 @@ def apply_degradation(img_np, deg_type, severity):
         # Symulacja szumu ISO matrycy (Gaussian Noise)
 
         # ================================ CONFIG CNN ===================================
-        std_devs = [0.05, 0.15, 0.25]
+        #std_devs = [0.05, 0.15, 0.25]
 
         # ================================ CONFIG TL ===================================
-        #std_devs = [12.75, 38.25, 63.75]
+        std_devs = [12.75, 38.25, 63.75]
         noise = np.random.normal(0, std_devs[severity], img_np.shape)
         img_degraded = img_np + noise
         
     elif deg_type == 'blur':
         # Symulacja rozmycia w ruchu (Motion/Gaussian Blur)
-        kernels = [3, 5, 9] 
+        #kernels = [3, 5, 9] 
+        kernels = [15, 23, 43] 
         k = kernels[severity]
         img_degraded = cv2.GaussianBlur(img_np, (k, k), 0)
         
@@ -50,10 +51,10 @@ def apply_degradation(img_np, deg_type, severity):
         img_degraded = img_np
 
     # zakres [0, 1] CNN
-    return np.clip(img_degraded, 0.0, 1.0).astype(np.float32)
+    #return np.clip(img_degraded, 0.0, 1.0).astype(np.float32)
 
     # zakres [0, 255] TL
-    #return np.clip(img_degraded, 0.0, 255.0).astype(np.float32)
+    return np.clip(img_degraded, 0.0, 255.0).astype(np.float32)
 
 # === GENEROWANIE OBRAZKA DEBUG ===
 def generate_debug_grid(image_path, x1, y1, x2, y2):
@@ -68,10 +69,10 @@ def generate_debug_grid(image_path, x1, y1, x2, y2):
     img_crop = img[y1:y2, x1:x2]
     img_resized = cv2.resize(img_crop, (IMG_WIDTH, IMG_HEIGHT))
     # =========================== Preprocessing CNN ===============================
-    img_base = img_resized.astype(np.float32) / 255.0
+    #img_base = img_resized.astype(np.float32) / 255.0
 
     # =========================== Preprocessin TL =================================
-    #img_base = img_resized.astype(np.float32)
+    img_base = img_resized.astype(np.float32)
 
     degradations = ['noise', 'blur', 'darkness']
     labels = ['Szum (Noise)', 'Rozmycie (Blur)', 'Ciemnosc (Darkness)']
@@ -82,19 +83,19 @@ def generate_debug_grid(image_path, x1, y1, x2, y2):
 
     for i, deg_type in enumerate(degradations):
         # Oryginał w pierwszej kolumnie dla CNN
-        axes[i, 0].imshow(img_base)
+        #axes[i, 0].imshow(img_base)
         
         # Oryginał w pierwszej kolumnie dla TL
-        #axes[i, 0].imshow(img_base.astype(np.uint8))
+        axes[i, 0].imshow(img_base.astype(np.uint8))
         axes[i, 0].set_title("Oryginal" if i == 0 else "")
         axes[i, 0].axis('off')
 
         # 3 stopnie zepsucia
         for sev in range(3):
             img_deg = apply_degradation(img_base.copy(), deg_type, sev)
-            axes[i, sev+1].imshow(img_deg)
+            #axes[i, sev+1].imshow(img_deg)
             # zepsucie dla TL
-            #axes[i, sev+1].imshow(img_deg.astype(np.uint8))
+            axes[i, sev+1].imshow(img_deg.astype(np.uint8))
             axes[i, sev+1].set_title(f"{labels[i]}\n{severities[sev]}")
             axes[i, sev+1].axis('off')
 
@@ -120,9 +121,9 @@ def load_crop_and_preprocess(path, x1, y1, x2, y2, label):
     img_cropped = img[y1:y2, x1:x2, :]
     img_resized = tf.image.resize(img_cropped, (IMG_HEIGHT, IMG_WIDTH))
     # config cnn
-    img_final = tf.cast(img_resized, tf.float32) / 255.0
+    #img_final = tf.cast(img_resized, tf.float32) / 255.0
     # config tl
-    #img_final = tf.cast(img_resized, tf.float32)
+    img_final = tf.cast(img_resized, tf.float32)
 
     return img_final, label
 

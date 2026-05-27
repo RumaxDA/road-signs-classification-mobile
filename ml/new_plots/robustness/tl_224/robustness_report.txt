@@ -6,13 +6,13 @@ Baseline Accuracy (Czyste dane): 0.8603
 
 --- ZAKŁÓCENIE: NOISE ---
 Poziom Lekki: 0.6019
-Poziom Średni: 0.3639
-Poziom Mocny: 0.2559
+Poziom Średni: 0.3632
+Poziom Mocny: 0.2557
 
 --- ZAKŁÓCENIE: BLUR ---
-Poziom Lekki: 0.8610
-Poziom Średni: 0.8606
-Poziom Mocny: 0.8542
+Poziom Lekki: 0.8401
+Poziom Średni: 0.8059
+Poziom Mocny: 0.6275
 
 --- ZAKŁÓCENIE: DARKNESS ---
 Poziom Lekki: 0.8374
